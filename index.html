@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap'); /* Import Montserrat font */
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212; /* Dark gray-black */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            perspective: 1200px; /* Adjusted perspective for a more pronounced 3D effect */
+            overflow-x: hidden;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between icon and text */
+        }
+
+            .header img {
+                width: 50px; /* Icon size */
+                height: 50px;
+            }
+
+            .header h1 {
+                font-family: 'Montserrat', sans-serif; /* Cool font for DRAGON */
+                font-size: 2.5rem;
+                font-weight: bold;
+                margin: 0;
+            }
+
+        .container {
+            text-align: center;
+            flex: 1;
+        }
+
+        .dragon-title {
+            font-family: 'Montserrat', sans-serif; /* Cool font for Dragon title */
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            text-transform: uppercase; /* Capitalize text */
+        }
+
+        .tagline {
+            font-family: 'Montserrat', sans-serif; /* Cool font for tagline */
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase; /* Capitalize text */
+        }
+
+        .byfon-emphasis {
+            font-family: 'Montserrat', sans-serif; /* Cool font for BYFON */
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: darkred;
+            margin-bottom: 2rem;
+            text-transform: uppercase; /* Capitalize text */
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.3), 0 0 15px rgba(255, 0, 0, 0.5);
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px rgba(255, 0, 0, 0.3), 0 0 15px rgba(255, 0, 0, 0.5);
+            }
+
+            100% {
+                text-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.7);
+            }
+        }
+
+        .image-container {
+            perspective: 1500px; /* More perspective for a 3D effect */
+            margin-bottom: 2rem;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-box {
+            width: 80%; /* Adjust width as needed */
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            position: relative;
+        }
+
+            .image-box img {
+                width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 20px 50px rgba(255, 0, 0, 0.3), 0 0 0 1px rgba(255, 0, 0, 0.1);
+                transform: translateZ(0); /* Ensure the image participates in 3D transformations */
+            }
+
+        .contact-btn {
+            background-color: #900;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0.5rem 0; /* Adjusted margin for spacing */
+        }
+
+            .contact-btn:hover {
+                background-color: #b00;
+                box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+                transform: translateY(-3px);
+            }
+
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 2rem;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            background-color: #600;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer; /* Added cursor pointer */
+        }
+
+            .icon img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .icon:hover {
+                transform: scale(1.1);
+                box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+            }
+
+        .footer {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 0;
+        }
+
+        /* 3D Effect on Image */
+        .image-container:hover .image-box {
+            transform: rotateY(10deg) rotateX(10deg) scale(1.05); /* More subtle rotation */
+            box-shadow: 0 40px 70px rgba(255, 0, 0, 0.5), 0 0 0 1px rgba(255, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://cdn.discordapp.com/attachments/1271101534536601620/1289794648524587131/icons8-dragon-50.png?ex=66fa1e5f&is=66f8ccdf&hm=b929a47be2100ca373b43f92e6594cf5ef84b8b1b24b6bae2febcefefd00b317" alt="Dragon Icon">
+        <h1>DRAGON</h1>
+    </div>
+    <div class="container">
+        <h2 class="dragon-title">Dragon</h2> <!-- Title "Dragon" -->
+        <p class="tagline">The first and best cheat after</p> <!-- Tagline -->
+        <p class="byfon-emphasis">BYFRON</p> <!-- BYFON emphasis -->
+        <div class="image-container">
+            <div class="image-box">
+                <img src="https://cdn.discordapp.com/attachments/1271101534536601620/1289788489310933084/dragonsploit.png?ex=66fa18a2&is=66f8c722&hm=30622db0e79f5cba1313010b30c22e7ed74380969faf449b8d7bcf0da468a431" alt="Dragonsploit">
+            </div>
+        </div>
+        <div class="icons">
+            <div class="icon" onclick="downloadFile()">
+                <img src="https://cdn.discordapp.com/attachments/1271101534536601620/1289719626711699578/icons8-download-64.png?ex=66f9d880&is=66f88700&hm=4380d78e8c53c1b00891b56687089b6fa2e4da401a272372674d1cc53ae62c32" alt="Download icon">
+            </div>
+            <div class="icon" onclick="window.open('https://discord.gg/5hQJmMfAav', '_blank')">
+                <img src="https://cdn.discordapp.com/attachments/1271101534536601620/1289719626921410725/icons8-discord-50.png?ex=66f9d880&is=66f88700&hm=5ecf156370419ebb7fd72ab1834461b0492c63d8d7fa4d324beb8876040cabf2" alt="Discord icon">
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <p class="footer">© 2024 Dragon Softworks</p>
+
+
+
+
+    <script>
+        const imageBox = document.querySelector('.image-box');
+        const imageContainer = document.querySelector('.image-container');
+
+        imageContainer.addEventListener('mousemove', (e) => {
+            const { left, top, width, height } = imageContainer.getBoundingClientRect();
+            const x = e.clientX - (left + width / 2);
+            const y = e.clientY - (top + height / 2);
+            imageBox.style.transform = `rotateY(${x * 0.05}deg) rotateX(${-y * 0.05}deg)`; // More pronounced rotation
+        });
+
+        imageContainer.addEventListener('mouseleave', () => {
+            imageBox.style.transform = 'rotateX(0) rotateY(0)';
+        });
+
+        // Fade-in effect
+        window.onload = function () {
+            document.body.style.opacity = 1;
+        };
+
+        function downloadFile() {
+            const link = document.createElement('a');
+            link.href = 'https://cdn.discordapp.com/attachments/1271101534536601620/1289796958743167016/DragonSploitV2_1.zip?ex=66fa2086&is=66f8cf06&hm=6af6a40f860263fc7911eaf850649e68497c9e0f9f182cf623354d56af83a78f&';
+            link.download = 'DragonSploitV2_1.zip';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
+
+
+<!-- HTML -->
+<div class="features">
+    <div class="feature-box">
+        <h3 class="feature-title">Easy Injecting Process</h3>
+        <p class="feature-description">The injecting process of Dragon executor is very simple, and fast.</p>
+    </div>
+    <div class="feature-box">
+        <h3 class="feature-title">User-Friendly UI</h3>
+        <p class="feature-description">The interface of Dragon is stunning and user-friendly. As compared to other Roblox exploits, you can easily run Roblox scripts using Dragon.</p>
+    </div>
+    <div class="feature-box">
+        <h3 class="feature-title">24×7 Customer Support</h3>
+        <p class="feature-description">Regardless of the time, if you encounter issues while using Dragon, you will have a team to get the issue resolved.</p>
+    </div>
+    <div class="feature-box">
+        <h3 class="feature-title">Always Updated</h3>
+        <p class="feature-description">Dragon is always up-to-date. As soon as Roblox is updated, Dragon follows within minutes or hours.</p>
+    </div>
+</div>
+
+<!-- CSS -->
+<style>
+    .features {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .feature-box {
+        background-color: rgba(255, 0, 0, 0.1);
+        border-radius: 15px;
+        padding: 20px;
+        width: 200px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        animation: featureGlow 2s infinite alternate;
+    }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+        }
+
+    .feature-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+
+    .feature-description {
+        font-size: 0.9rem;
+        color: #aaa;
+    }
+
+    @keyframes featureGlow {
+        0% {
+            box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+        }
+
+        100% {
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+        }
+    }
+</style>
